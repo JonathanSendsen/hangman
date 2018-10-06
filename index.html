@@ -1,0 +1,55 @@
+<!-- Creating hangman semantics in an index.html file-->
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hangman!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Linking a specicing Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <!-- Linking Bootstrap cdn reference -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Linking my style.css relative path -->
+    <link rel="stylesheet" type="text/css" href="../hangman/assets/css/style.css"/>
+    <!-- Linking my game.js relative path -->
+    <script src="../hangman/assets/js/game.js"></script>
+</head>
+
+<body>
+    <div class="container"> 
+      <img class="title" alt="header" src="../hangman/assets/images/title1.png">
+        <div class="row">
+            <div class="col-md-6 gameplay-column">
+                <img class="win" src="../hangman/assets/images/win.png" alt="Winning Image"/>
+                <img class="lost" src="../hangman/assets/images/lost.png" alt="Game Over Image"/>
+                <h2 class="tryAgainKey">Press Any Key To Try Again!</h2>
+                <img class="hangman" src="../hangman/assets/images/hang.png" alt="Hangman"/>
+            </div>
+            <div class="col-md-6 gameplay-column">
+                    <h2>Press A-Z to Make a Guess!</h2>
+                    <h4>Wins</h4>
+                    <h5 class="totalWins"></h5>
+                    <h4>Current Word</h4>
+                    <h3 class="currentWord"></h3>
+                    <h4>Guesses Remaining</h4>
+                    <h6 class="guessesLeft"></h6>
+                    <h4>Letters Guessed</h4>
+                    <h3 class="lettersGuessed"></h3>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+body {
+    background-color: #eee;
+    padding-top: 20px;
+    font-family: 'Press Start 2P', cursive;
+    background: url('../images/background1.jpg');
+    background-size: cover;
+}
+
+.container {
+    text-align: center;
+}
+
+h1,h2,h3,
+h4,h5,h6 {
+    padding-top: 23px;
+    color: rgb(174, 174, 196)
+}
+
+.title {
+   width: 27rem;
+}
+
+.lost, .win{ 
+    display: block;
+    margin: 0 auto;
+}
+
+.hangman {
+    padding-top: 5rem;
+    width: 375px;
+}
+.tryAgainKey, 
+.lost, .win {display: none;}
+
+.gameplay-column {
+    padding-top: 20px;
+    border: 2px outset rgb(180, 85, 168);
+    text-align: center;
+    margin-top: 20px;
+    min-height: 500px;
+    background-color:
+}
