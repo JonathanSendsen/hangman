@@ -24,7 +24,7 @@ function updateDisplay() {
     document.getElementsByClassName("remainingGuesses").innerText = remainingGuesses;
     document.getElementsByClassName("guessedLetters").innerText = guessedLetters;
     if(remainingGuesses <= 0) {
-        document.getElementsByClassName("lost").style.cssText = "display: block";
+        document.getElementsByClassName("lost").style.cssText = 'display: block';
         document.getElementsByClassName("tryAgainKey").style.cssText = "display:block";
         hasFinished = true;
     }
