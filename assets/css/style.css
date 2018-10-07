@@ -13,11 +13,11 @@ body {
 h1,h2,h3,
 h4,h5,h6 {
     padding-top: 23px;
-    color: rgb(174, 174, 196)
+    color: rgb(219, 219, 241)
 }
 
 .title {
-   width: 27rem;
+   width: 20rem;
 }
 
 .lost, .win{ 
@@ -37,6 +37,21 @@ h4,h5,h6 {
     border: 2px outset rgb(180, 85, 168);
     text-align: center;
     margin-top: 20px;
-    min-height: 500px;
+    min-height: 520px;
 }
-    
+
+.hint{
+background-color: rgb(226, 154, 217);
+color: black;
+border: solid 5px rgb(54, 12, 49);
+text-decoration:none;
+cursor: help;
+font-size:1em;
+padding:5px 5px;
+width:110px;
+margin: 2px;
+}
+
+button:hover {
+    background-color:  rgba(45, 131, 78, 0.952);
+}

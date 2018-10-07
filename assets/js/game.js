@@ -2,7 +2,7 @@
 let correctWords = ['javascript sucks', 'atari', 'captain planet', 'mortal kombat', 'oxygen', 'yacht', 'sphinx' ]  
 
 // Maximum amount of attempts a user gets
-const maxAttempts = 11;            
+const maxAttempts = 10;            
 
 var guessedLetters = [];        // holds an array of letters that has been guessed
 var currentWordIndex = [];      // store the index of the randomly selected words
@@ -139,14 +139,14 @@ function makeGuess(letter) {
     
 };
 
-// Event listener
+// Introducing and event listener
 document.onkeydown = function(event) {
-    // If we finished a game, dump one keystroke and reset.
+    // If the user finished a game, dump one keystroke and reset.
     if(hasFinished) {
         resetGame();
         hasFinished = false;
     } else {
-        // Check to make sure a-z was pressed.
+        // Condition to check and make sure a-z was pressed.
         if(event.keyCode >= 65 && event.keyCode <= 90) {
             makeGuess(event.key.toUpperCase());
             updateDisplay();
@@ -155,3 +155,12 @@ document.onkeydown = function(event) {
         }
     }
 };
+
+// Allows hints to be displayed based on correctWords
+
+let hints = ['Computer Language', 'Old Gaming Console', 'Marwans Favourite Superhero', 'Video Game Franchise', 'Important For Humans', 'Watercraft Signifying You Made It!', 'Specific Cat Breed' ]
+
+
+if (correctWords === 'javascript sucks') {
+    document.getElementsByClassName("hint")[0].innerHTML = "Computer Language";
+}
