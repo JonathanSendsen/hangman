@@ -16,16 +16,16 @@ var wins = 0;                   // How many wins has the player racked up
 //  Updates the display on my index.html page
 function updateDisplay() {
 
-    document.getElementsByClassName("totalWins").innerText = wins;
-    document.getElementsByClassName("currentWord").innerText = "You Win";
+    document.getElementsByClassName("totalWins")[0].innerText = wins;
+    document.getElementsByClassName("currentWord")[0].innerText = "You Win";
     for (var i = 0; i < guessingWord.length; i++) {
-        document.getElementsByClassName("currentWord").innerText += guessingWord[i];
+        document.getElementsByClassName("currentWord")[0].innerText += guessingWord[i];
     }
-    document.getElementsByClassName("remainingGuesses").innerText = remainingGuesses;
-    document.getElementsByClassName("guessedLetters").innerText = guessedLetters;
+    document.getElementsByClassName("remainingGuesses")[0].innerText = remainingGuesses;
+    document.getElementsByClassName("guessedLetters")[0].innerText = guessedLetters;
     if(remainingGuesses <= 0) {
-        document.getElementsByClassName("lost").style.cssText = 'display: block';
-        document.getElementsByClassName("tryAgainKey").style.cssText = "display:block";
+        document.getElementsByClassName("lost")[0].style.cssText = 'display: block';
+        document.getElementsByClassName("tryAgainKey")[0].style.cssText = "display:block";
         hasFinished = true;
     }
 };
@@ -43,7 +43,7 @@ function resetGame() {
     guessingWord = [];
 
     // clears my hangman image after  maxAttempts  exceeded
-    document.getElementsByClassName("hangman").src = "../hangman/assets/images/hang.png";
+    document.getElementsByClassName("hangman")[0].src = "../hangman/assets/images/hang.png";
 
     // Build the guessing word and clear it out
     for (var i = 0; i < correctWords[currentWordIndex].length; i++) {
@@ -63,7 +63,7 @@ function resetGame() {
    // Updates the display on the html page
 function updateDisplay() {
 
-    document.getElementsByClassName("totalWins").innerText = wins;
+    document.getElementsByClassName("totalWins")[0].innerText = wins;
 
     // Display how much of the word someone has already guessed on screen.
     // Printing the array would add commas (,) in order to link a string from each value in the array.
@@ -73,9 +73,9 @@ function updateDisplay() {
     }
 
     //
-    document.getElementsByClassName("currentWord").innerText = guessingWordText;
-    document.getElementsByClassName("remainingGuesses").innerText = remainingGuesses;
-    document.getElementsByClassName("guessedLetters").innerText = guessedLetters;
+    document.getElementsByClassName("currentWord")[0].innerText = guessingWordText;
+    document.getElementsByClassName("remainingGuesses")[0].innerText = remainingGuesses;
+    document.getElementsByClassName("guessedLetters")[0].innerText = guessedLetters;
 };
 
 // Updates the hangman image depending on how many guesses
@@ -107,3 +107,51 @@ function evaluateGuess(letter) {
     }
 };
 
+// Function that checks wins by seeing if there are any remaining underscores in the guessingWord.
+function checkWin() {
+    if(guessingWord.indexOf("_") === -1) {
+        document.getElementsByClassName("win")[0].style.cssText = "display: block";
+        document.getElementsByClassName("pressKeyTryAgain")[0].style.cssText= "display: block";
+        wins++;
+        hasFinished = true;
+    }
+};
+
+// Checks for a loss
+function checkLoss()
+{
+    if(remainingGuesses <= 0) {
+        document.getElementsByClassName("lost")[0].style.cssText = "display: block";
+        document.getElementsByClassName("pressKeyTryAgain")[0].style.cssText = "display: block";
+        hasFinished = true;
+    }
+}
+
+// Allows users to make a guess
+function makeGuess(letter) {
+    if (remainingGuesses > 0) {
+        // Makes sure the users didn't use this letter yet
+        if (guessedLetters.indexOf(letter) === -1) {
+            guessedLetters.push(letter);
+            evaluateGuess(letter);
+        }
+    }
+    
+};
+
+// Event listener
+document.onkeydown = function(event) {
+    // If we finished a game, dump one keystroke and reset.
+    if(hasFinished) {
+        resetGame();
+        hasFinished = false;
+    } else {
+        // Check to make sure a-z was pressed.
+        if(event.keyCode >= 65 && event.keyCode <= 90) {
+            makeGuess(event.key.toUpperCase());
+            updateDisplay();
+            checkWin();
+            checkLoss();
+        }
+    }
+};
