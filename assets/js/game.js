@@ -156,7 +156,8 @@ document.onkeydown = function(event) {
     }
 };
 
-// Allows hints to be displayed based on correctWords array
+// This section will allows hints to be displayed based on correctWords array
+
 // Allows users to click hint button and 
 hint.onclick = function() {
 
