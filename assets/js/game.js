@@ -29,3 +29,32 @@ function updateDisplay() {
         hasFinished = true;
     }
 };
+
+// This function reset's game variables
+function resetGame() {
+    remainingGuesses = maxAttempts;
+    gameStarted = false;
+
+    // Using Math.floor to round the number to its nearest integer
+    currentWordIndex = Math.floor(Math.random() * (correctWords.length));
+
+    // Clear out arrays
+    guessedLetters = [];
+    guessingWord = [];
+
+    // clears my hangman image after every maxAttempts exceeded
+    document.getElementsByClassName("hangman").src = "../hangman/assets/images/hang.png";
+
+    // Build the guessing word and clear it out
+    for (var i = 0; i < correctWords[currentWordIndex].length; i++) {
+        guessingWord.push("_");
+    };
+
+       // Hide game over and win images/text
+       document.getElementsByClassName("tryAgainKey").style.cssText = "display: ;
+       document.getElementsByClassName("lost").style.css = "display: none";
+       document.getElementsByClassName("win").style.css = "display: none";
+   
+       // Show display
+       updateDisplay();
+   };
