@@ -156,11 +156,17 @@ document.onkeydown = function(event) {
     }
 };
 
-// Allows hints to be displayed based on correctWords
+// Allows hints to be displayed based on correctWords array
+// Allows users to click hint button and 
+hint.onclick = function() {
 
-let hints = ['Computer Language', 'Old Gaming Console', 'Marwans Favourite Superhero', 'Video Game Franchise', 'Important For Humans', 'Watercraft Signifying You Made It!', 'Specific Cat Breed' ]
+hints = ['Computer Language',
+ 'Old Gaming Console', 'Marwans Favourite Superhero', 
+ 'Video Game Franchise', 'Important For Humans', 
+ 'Watercraft Signifying You Made It!', 'Specific Cat Breed' ]
 
 
-if (correctWords === 'javascript sucks') {
-    document.getElementsByClassName("hint")[0].innerHTML = "Computer Language";
+
+
+
 }
