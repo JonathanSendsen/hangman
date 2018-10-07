@@ -66,7 +66,7 @@ function updateDisplay() {
     document.getElementsByClassName("totalWins").innerText = wins;
 
     // Display how much of the word someone has already guessed on screen.
-    // Printing the array would add commas (,) - to link a string from each value in the array.
+    // Printing the array would add commas (,) in order to link a string from each value in the array.
     var guessingWordText = "";
     for (var i = 0; i < guessingWord.length; i++) {
         guessingWordText += guessingWord[i];
@@ -77,3 +77,33 @@ function updateDisplay() {
     document.getElementsByClassName("remainingGuesses").innerText = remainingGuesses;
     document.getElementsByClassName("guessedLetters").innerText = guessedLetters;
 };
+
+// Updates the hangman image depending on how many guesses
+function updateHangmanImage() {
+    document.getElementsByClassName("hangman").src = "../hangman/assets/images/hang.png" + (maxAttempts - remainingGuesses) + "../hangman/assets/images/hang.png";
+};
+
+// This function takes a letter and finds all instances of in that string to replace them with the guessed word
+function evaluateGuess(letter) {
+    // This 'any' array stores the positions of letters in string
+    var positions = [];
+
+    // Loops through the correct words finding of a guessed letter and storing the letter in an array.
+    for (var i = 0; i < correctWords[currentWordIndex].length; i++) {
+        if(correctWords[currentWordIndex][i] === letter) {
+            positions.push(i);
+        }
+    }
+
+    // if there are no correct findings, remove the guesses and update the hangman image
+    if (positions.length <= 0) {
+        remainingGuesses--;
+        updateHangmanImage();
+    } else {
+        // Loop through all findings and replace the '_' with a letter.
+        for(var i = 0; i < positions.length; i++) {
+            guessingWord[positions[i]] = letter;
+        }
+    }
+};
+
