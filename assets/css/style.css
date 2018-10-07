@@ -27,9 +27,9 @@ h4,h5,h6 {
 
 .hangman {
     padding-top: 2rem;
-    width: 375px;
+    width: 350px;
 }
-.tryAgainKey, 
+.pressKeyTryAgain, 
 .lost, .win {display: none;}
 
 .gameplay-column {

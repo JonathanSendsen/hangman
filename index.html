@@ -2,11 +2,9 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Retro Hangman!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Linking a specicing Google font-->
+    <!-- Linking a specific Google font-->
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <!-- Linking bootstrap css cdn reference -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -23,7 +21,7 @@
             <div class="col-md-6 gameplay-column">
                 <img class="win" src="../hangman/assets/images/win.png" alt="Winning Image"/>
                 <img class="lost" src="../hangman/assets/images/lost.png" alt="Game Over Image"/>
-                <h2 class="tryAgainKey">Press Any Key To Try Again!</h2>
+                <h2 class="pressKeyTryAgain">Press Any Key To Try Again!</h2>
                 <img class="hangman" src="../hangman/assets/images/hang.png" alt="Hangman"/>
             </div>
             <div class="col-md-6 gameplay-column">
@@ -33,16 +31,16 @@
                     <h4>Current Word</h4>
                     <h3 class="currentWord"></h3>
                     <h4>Guesses Remaining</h4>
-                    <h6 class="guessesLeft"></h6>
+                    <h6 class="remainingGuesses"></h6>
                     <h4>Letters Guessed</h4>
-                    <h3 class="lettersGuessed"></h3>
+                    <h3 class="guessedLetters"></h3>
                 </div>
             </div>
 
     </div>
 <script>
-    resetGame();
     updateDisplay();
+    resetGame();
 </script>
  <!-- jQuery must be included before Bootstrap's js -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

@@ -1,4 +1,4 @@
-// Beginning to create my selectable words for the game.
+// Beginning to create the correct words for the game.
 let correctWords = ['javascript sucks', 'atari', 'captain planet', 'mortal kombat', 'oxygen', 'yacht', 'sphinx' ]  
 
 // Maximum amount of attempts a user gets
@@ -42,7 +42,7 @@ function resetGame() {
     guessedLetters = [];
     guessingWord = [];
 
-    // clears my hangman image after every maxAttempts exceeded
+    // clears my hangman image after  maxAttempts  exceeded
     document.getElementsByClassName("hangman").src = "../hangman/assets/images/hang.png";
 
     // Build the guessing word and clear it out
@@ -51,10 +51,29 @@ function resetGame() {
     };
 
        // Hide game over and win images/text
-       document.getElementsByClassName("tryAgainKey").style.cssText = "display: ;
-       document.getElementsByClassName("lost").style.css = "display: none";
-       document.getElementsByClassName("win").style.css = "display: none";
+       document.getElementsByClassName("pressKeyTryAgain")[0].style.cssText = "display: none";
+       document.getElementsByClassName("lost")[0].style.cssText = "display: none";
+       document.getElementsByClassName("win")[0].style.cssText = "display: none";
    
        // Show display
        updateDisplay();
    };
+
+
+   // Updates the display on the html page
+function updateDisplay() {
+
+    document.getElementsByClassName("totalWins").innerText = wins;
+
+    // Display how much of the word someone has already guessed on screen.
+    // Printing the array would add commas (,) - to link a string from each value in the array.
+    var guessingWordText = "";
+    for (var i = 0; i < guessingWord.length; i++) {
+        guessingWordText += guessingWord[i];
+    }
+
+    //
+    document.getElementsByClassName("currentWord").innerText = guessingWordText;
+    document.getElementsByClassName("remainingGuesses").innerText = remainingGuesses;
+    document.getElementsByClassName("guessedLetters").innerText = guessedLetters;
+};
