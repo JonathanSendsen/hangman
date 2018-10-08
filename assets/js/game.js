@@ -11,6 +11,7 @@ var remainingGuesses = 0;       // How many tries the user has left
 var gameStarted = false;        // Prompts users to start the game
 var hasFinished = false;        // Flag for 'press any key to try again'     
 var wins = 0;                   // How many wins has the player racked up
+var showHint = [];
 
 
 //  Updates the display on my index.html page
@@ -159,15 +160,15 @@ document.onkeydown = function(event) {
 // This section will allows hints to be displayed based on correctWords array
 
 // Allows users to click hint button and 
-hint.onclick = function() {
+var showHint = document.getElementById("hint").onclick = function () {
 
-hints = ['Computer Language',
+showHint = ['Computer Language',
  'Old Gaming Console', 'Marwans Favourite Superhero', 
  'Video Game Franchise', 'Important For Humans', 
- 'Watercraft Signifying You Made It!', 'Specific Cat Breed' ]
+ 'Watercraft Signifying You Made It!', 'Specific Cat Breed']
+
+};
 
 
 
 
-
-}
