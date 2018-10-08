@@ -1,5 +1,5 @@
 // Beginning to create the correct words for the game.
-let correctWords = ['javascriptsucks', 'atari', 'captain planet', 'mortal kombat', 'oxygen', 'yacht', 'sphinx' ]  
+let correctWords = ['javascriptsucks', 'atari', 'captainplanet', 'mortalkombat', 'oxygen', 'yacht', 'sphinx' ]  
 
 // Maximum amount of attempts a user gets
 const maxAttempts = 10;            
@@ -161,13 +161,20 @@ document.onkeydown = function(event) {
 
 // Allows users to click hint button and recieve an alert
 var showHint = document.getElementById("hint").onclick = function (event) {
-    showHint = ['Computer Language',
-     'Old Gaming Console', 'Marwans Favourite Superhero', 
-     'Video Game Franchise', 'Important For Humans', 
-     'Watercraft Signifying You Made It!', 'Specific Cat Breed']
-    
-    };
+    alert("hello")
+    const showHints = {
+        sphinx: 'Specific Cat Breed',
+        javascriptsucks: 'Computer Language',
+        atari: 'Old Gaming Console',
+        captainplanet: 'Marwans Favourite Superhero',
+        oxygen: 'Important For Humans',
+        yacht: 'Watercraft Signifying Your Chilling',
+        sphinx: 'Specific Cat Breed'   
+    } 
+    if (correctWords === 'sphinx') {
+        const hint = showHints['sphinx']
+        button.textContent(hint)
+    }
+}
 
-
-
-
+   
