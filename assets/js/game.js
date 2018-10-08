@@ -1,5 +1,5 @@
 // Beginning to create the correct words for the game.
-let correctWords = ['javascript sucks', 'atari', 'captain planet', 'mortal kombat', 'oxygen', 'yacht', 'sphinx' ]  
+let correctWords = ['javascriptsucks', 'atari', 'captain planet', 'mortal kombat', 'oxygen', 'yacht', 'sphinx' ]  
 
 // Maximum amount of attempts a user gets
 const maxAttempts = 10;            
@@ -11,7 +11,7 @@ var remainingGuesses = 0;       // How many tries the user has left
 var gameStarted = false;        // Prompts users to start the game
 var hasFinished = false;        // Flag for 'press any key to try again'     
 var wins = 0;                   // How many wins has the player racked up
-var showHint = [];
+var showHint = [];              // Display hints for correctWords
 
 
 //  Updates the display on my index.html page
@@ -160,14 +160,13 @@ document.onkeydown = function(event) {
 // This section will allows hints to be displayed based on correctWords array
 
 // Allows users to click hint button and recieve an alert
-var showHint = document.getElementById("hint").onclick = function () {
-
-showHint = ['Computer Language',
- 'Old Gaming Console', 'Marwans Favourite Superhero', 
- 'Video Game Franchise', 'Important For Humans', 
- 'Watercraft Signifying You Made It!', 'Specific Cat Breed']
-
-};
+var showHint = document.getElementById("hint").onclick = function (event) {
+    showHint = ['Computer Language',
+     'Old Gaming Console', 'Marwans Favourite Superhero', 
+     'Video Game Franchise', 'Important For Humans', 
+     'Watercraft Signifying You Made It!', 'Specific Cat Breed']
+    
+    };
 
 
 
