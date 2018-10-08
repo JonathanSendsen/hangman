@@ -159,7 +159,7 @@ document.onkeydown = function(event) {
 
 // This section will allows hints to be displayed based on correctWords array
 
-// Allows users to click hint button and 
+// Allows users to click hint button and recieve and alert
 var showHint = document.getElementById("hint").onclick = function () {
 
 showHint = ['Computer Language',
