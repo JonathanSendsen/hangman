@@ -40,7 +40,7 @@ h4,h5,h6 {
     min-height: 520px;
 }
 
-.hint{
+#hint{
 background-color: rgb(226, 154, 217);
 color: black;
 border: solid 5px rgb(54, 12, 49);
@@ -52,6 +52,6 @@ width:110px;
 margin: 2px;
 }
 
-button:hover {
+#hint:hover {
     background-color:  rgba(45, 131, 78, 0.952);
 }
