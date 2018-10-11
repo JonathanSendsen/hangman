@@ -5,7 +5,7 @@ let correctWords = ['javascriptsucks', 'atari', 'captainplanet', 'mortalkombat',
 const maxAttempts = 10;            
 
 var guessedLetters = [];        // holds an array of letters that has been guessed
-var currentWordIndex = [];      // store the index of the randomly selected words
+var currentWordIndex = Math.floor(Math.random() * (correctWords.length));    // store the index of the randomly selected words
 var guessingWord = [];          // stores the letters that have been properly guessed
 var remainingGuesses = 0;       // How many tries the user has left
 var gameStarted = false;        // Prompts users to start the game
@@ -160,8 +160,8 @@ document.onkeydown = function(event) {
 // This section will allows hints to be displayed based on correctWords array
 
 // Allows users to click hint button and recieve an alert
-var showHint = document.getElementById("hint").onclick = function (event) {
-    alert("hello")
+ document.getElementById("hint").onclick = function (event) {
+
     const showHints = {
         sphinx: 'Specific Cat Breed',
         javascriptsucks: 'Computer Language',
@@ -169,12 +169,25 @@ var showHint = document.getElementById("hint").onclick = function (event) {
         captainplanet: 'Marwans Favourite Superhero',
         oxygen: 'Important For Humans',
         yacht: 'Watercraft Signifying Your Chilling',
-        sphinx: 'Specific Cat Breed'   
-    } 
-    if (correctWords === 'sphinx') {
-        const hint = showHints['sphinx']
-        button.textContent(hint)
+        "sphinx": 'Specific Cat Breed'   
     }
-}
 
-   
+    for (let key in showHints) {
+        console.log(showHints[key]);
+    } if (key === currentWordIndex) {
+        return(showHints[key])
+    }
+
+    
+    // showHints.keys().forEach(function(){
+    //     console.log(key, value)
+
+    //     if ("sphinx" == showHints[hints]) {
+    //         alert(showHints[hints])
+    //     } 
+    // }
+    // )
+
+
+} 
+    
